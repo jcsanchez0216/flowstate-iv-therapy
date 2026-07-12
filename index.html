@@ -16,6 +16,7 @@
     --accent: #7E97A3;
     --accent-dark: #5F7986;
     --gray: #6B6660;
+    --surface: #fff;
     --font-serif: 'Playfair Display', serif;
     --font-script: 'Dancing Script', cursive;
     --font-sans: 'Inter', sans-serif;
@@ -119,7 +120,7 @@
   @media (min-width: 1000px) { .drip-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (min-width: 640px) { .premium-grid { grid-template-columns: repeat(2, 1fr); } }
   .drip-card, .addon-card, .premium-card {
-    background: #fff;
+    background: var(--surface);
     border: 1px solid rgba(23,23,26,.08);
     border-radius: var(--radius);
     padding: 24px;
