@@ -162,6 +162,27 @@
   .about-copy h2 { font-size: 28px; margin-bottom: 16px; }
   .credential { font-family: var(--font-sans); font-size: 16px; font-weight: 600; color: var(--accent-dark); }
   .about-copy p.bio { font-size: 16px; }
+  .contact-section { background: var(--surface); }
+  .contact-section .container { text-align: center; }
+  .contact-intro { max-width: 480px; margin: 0 auto 28px; color: var(--gray); }
+  .contact-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; margin-bottom: 40px; }
+  @media (min-width: 480px) { .contact-actions { flex-direction: row; justify-content: center; } }
+  .locations-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .locations-list li {
+    background: var(--cream);
+    border: 1px solid rgba(23,23,26,.1);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 14px;
+  }
 </style>
 </head>
 <body>
@@ -333,7 +354,24 @@
       </div>
     </div>
   </section>
-  <section id="contact"><!-- filled in Task 5 --></section>
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Come to You</h2>
+      <p class="contact-intro">Mobile IV hydration therapy anywhere in the Albuquerque area. Call, text, or DM to book &mdash; no forms, no hassle.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:+15052494350">(505) 249-4350</a>
+        <a class="btn btn-outline" href="https://instagram.com/flowstateivtherapy" target="_blank" rel="noopener">DM on Instagram</a>
+      </div>
+      <ul class="locations-list">
+        <li>Your Home</li>
+        <li>The Gym</li>
+        <li>Your Office</li>
+        <li>Hotel Stays</li>
+        <li>And More</li>
+      </ul>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
