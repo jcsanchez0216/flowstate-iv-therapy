@@ -467,10 +467,20 @@ git commit -m "Add services and pricing section"
 - Modify: `index.html` — replace the contents of `<section id="about">` (currently `<!-- filled in Task 4 -->`)
 
 **Interfaces:**
-- Consumes: `--accent`, `--cream` custom properties; `.container`, `.eyebrow` classes from Task 1
+- Consumes: `--accent`, `--cream` custom properties; `.container`, `.eyebrow` classes from Task 1; adds one new custom property (`--placeholder-bg`) to the existing `:root` block
 - Produces: `.about-grid`, `.about-photo`, `.about-copy`, `.credential` classes (used only within this section)
 
-- [ ] **Step 1: Add About CSS to the `<style>` block, just before `</style>`**
+- [ ] **Step 1: Add one custom property to the existing `:root` block**
+
+Find the `:root { ... }` block near the top of `<style>` (it currently defines `--ink`, `--cream`, `--accent`, `--accent-dark`, `--gray`, `--surface`, `--font-serif`, `--font-script`, `--font-sans`, `--radius`). Add one new line right after `--surface`:
+
+```css
+    --placeholder-bg: radial-gradient(circle at 50% 30%, #e4ddc9 0%, #d8cfb6 100%);
+```
+
+This keeps every color/gradient value used anywhere in the file defined once in `:root`, rather than as a literal inside a component rule.
+
+- [ ] **Step 2: Add About CSS to the `<style>` block, just before `</style>`**
 
 ```css
   .about-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
@@ -481,7 +491,7 @@ git commit -m "Add services and pricing section"
     max-width: 320px;
     margin: 0 auto;
     border-radius: var(--radius);
-    background: radial-gradient(circle at 50% 30%, #e4ddc9 0%, #d8cfb6 100%);
+    background: var(--placeholder-bg);
   }
   @media (min-width: 768px) { .about-photo { margin: 0; } }
   .about-copy h2 { font-size: 28px; margin-bottom: 16px; }
@@ -489,7 +499,7 @@ git commit -m "Add services and pricing section"
   .about-copy p.bio { font-size: 16px; }
 ```
 
-- [ ] **Step 2: Replace the About section markup**
+- [ ] **Step 3: Replace the About section markup**
 
 ```html
   <section id="about">
@@ -507,7 +517,7 @@ git commit -m "Add services and pricing section"
   </section>
 ```
 
-- [ ] **Step 3: Verify About content is present**
+- [ ] **Step 4: Verify About content is present**
 
 Run: `grep -c "Laticia Sanchez" ~/flowstate-iv-therapy/index.html`
 Expected: `1`
@@ -518,7 +528,10 @@ Expected: `1`
 Run: `grep -c "PLACEHOLDER: replace the .about-photo div" ~/flowstate-iv-therapy/index.html`
 Expected: `1`
 
-- [ ] **Step 4: Commit**
+Run: `grep -c "\-\-placeholder-bg" ~/flowstate-iv-therapy/index.html`
+Expected: `2` (the `:root` definition and the one usage in `.about-photo`)
+
+- [ ] **Step 5: Commit**
 
 ```bash
 cd ~/flowstate-iv-therapy
