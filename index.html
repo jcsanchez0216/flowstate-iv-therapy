@@ -17,6 +17,7 @@
     --accent-dark: #5F7986;
     --gray: #6B6660;
     --surface: #fff;
+    --placeholder-bg: radial-gradient(circle at 50% 30%, #e4ddc9 0%, #d8cfb6 100%);
     --font-serif: 'Playfair Display', serif;
     --font-script: 'Dancing Script', cursive;
     --font-sans: 'Inter', sans-serif;
@@ -147,6 +148,20 @@
   .tier-list li:first-child { border-top: none; }
   .tier-list .tier-price { font-family: var(--font-serif); color: var(--accent-dark); }
   .tier-list small { display: block; width: 100%; color: var(--gray); font-size: 12px; margin-top: 2px; }
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
+  @media (min-width: 768px) { .about-grid { grid-template-columns: 280px 1fr; gap: 48px; } }
+  .about-photo {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    background: var(--placeholder-bg);
+  }
+  @media (min-width: 768px) { .about-photo { margin: 0; } }
+  .about-copy h2 { font-size: 28px; margin-bottom: 16px; }
+  .credential { font-family: var(--font-sans); font-size: 16px; font-weight: 600; color: var(--accent-dark); }
+  .about-copy p.bio { font-size: 16px; }
 </style>
 </head>
 <body>
@@ -305,7 +320,19 @@
       </div>
     </div>
   </section>
-  <section id="about"><!-- filled in Task 4 --></section>
+  <section id="about">
+    <div class="container about-grid">
+      <!-- PLACEHOLDER: replace the .about-photo div below with
+           <img class="about-photo" src="laticia-portrait.jpg" alt="Portrait of founder, BSN, RN">
+           once a real portrait photo is available. -->
+      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-copy">
+        <p class="eyebrow">Meet Your Nurse</p>
+        <h2>Laticia Sanchez, <span class="credential">BSN, RN</span></h2>
+        <p class="bio">Hello!! I'm Laticia! I am a registered nurse born and raised in New Mexico. I graduated from UNM Nursing school in 2023. I am doing IV therapy based out of ABQ and looking to help you feel your best &mdash; safely and comfortably!</p>
+      </div>
+    </div>
+  </section>
   <section id="contact"><!-- filled in Task 5 --></section>
 </main>
 
