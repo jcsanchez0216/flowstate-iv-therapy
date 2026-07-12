@@ -547,13 +547,13 @@ git commit -m "Add About section with Laticia's bio"
 - Modify: `index.html` — replace the contents of `<section id="contact">` (currently `<!-- filled in Task 5 -->`)
 
 **Interfaces:**
-- Consumes: `--ink`, `--accent` custom properties; `.container`, `.eyebrow`, `.btn`, `.btn-primary`, `.btn-outline` classes from Task 1
+- Consumes: `--ink`, `--accent`, `--surface` custom properties; `.container`, `.eyebrow`, `.btn`, `.btn-primary`, `.btn-outline` classes from Task 1 (`--surface: #fff` was added to `:root` during Task 3's review fix — reuse it here rather than a new literal)
 - Produces: `.contact-section`, `.contact-actions`, `.locations-list` classes (used only within this section)
 
 - [ ] **Step 1: Add Contact CSS to the `<style>` block, just before `</style>`**
 
 ```css
-  .contact-section { background: #fff; }
+  .contact-section { background: var(--surface); }
   .contact-section .container { text-align: center; }
   .contact-intro { max-width: 480px; margin: 0 auto 28px; color: var(--gray); }
   .contact-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; margin-bottom: 40px; }
