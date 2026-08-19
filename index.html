@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flowstate IV Therapy | Mobile IV Hydration in Albuquerque, NM</title>
-<meta name="description" content="Mobile IV hydration, vitamin, and NAD+ therapy in Albuquerque, NM. Licensed RN comes to your home, gym, office, or hotel. Call or text to book.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E">
+<title>Flowstate IV Therapy | Mobile IV Hydration in Albuquerque & Rio Rancho, NM</title>
+<meta name="description" content="Mobile IV hydration, vitamin, and NAD+ therapy in Albuquerque and Rio Rancho, NM. Licensed RN comes to your home, gym, office, or hotel. Call or text to book.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Dancing+Script:wght@500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -86,6 +88,7 @@
   .site-footer { background: var(--ink); color: var(--cream); padding: 40px 0; }
   .footer-content { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
   .footer-content a { color: var(--cream); }
+  .footer-links { display: flex; gap: 20px; }
   .disclaimer { font-size: 0.75rem; color: rgba(244,239,228,.65); max-width: 480px; }
   .hero {
     position: relative;
@@ -165,11 +168,47 @@
   .about-copy h2 { font-size: 1.75rem; margin-bottom: 16px; }
   .credential { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--accent-dark); }
   .about-copy p.bio { font-size: 1rem; }
+  .gallery-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-scroll::-webkit-scrollbar { display: none; }
+  .gallery-scroll img {
+    flex: 0 0 auto;
+    width: 78%;
+    max-width: 340px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius);
+    scroll-snap-align: center;
+  }
+  @media (min-width: 768px) { .gallery-scroll img { width: 30%; } }
+  .gallery-controls { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+  .gallery-controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-controls button:active { transform: scale(.95); }
   .contact-section { background: var(--surface); }
   .contact-section .container { text-align: center; }
   .contact-intro { max-width: 480px; margin: 0 auto 28px; color: var(--gray); }
   .contact-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; margin-bottom: 40px; }
-  @media (min-width: 480px) { .contact-actions { flex-direction: row; justify-content: center; } }
+  @media (min-width: 480px) { .contact-actions { flex-direction: row; flex-wrap: wrap; justify-content: center; } }
   .locations-list {
     list-style: none;
     display: flex;
@@ -220,7 +259,7 @@
       <div class="hero-logo">
         <img src="images/logo-dark.png" alt="Flowstate IV Therapy logo">
       </div>
-      <p class="eyebrow">Mobile IV Hydration Therapy &middot; Albuquerque, NM</p>
+      <p class="eyebrow">Mobile IV Hydration Therapy &middot; Albuquerque &amp; Rio Rancho, NM</p>
       <h1 class="hero-tagline">Mobile wellness that fits your flow.</h1>
       <p class="hero-sub">Come to You &mdash; IV hydration, vitamin, and NAD+ infusions delivered by a licensed RN, wherever you are.</p>
       <div class="cta-row">
@@ -345,14 +384,37 @@
       </div>
     </div>
   </section>
+  <section id="gallery">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Out and About</p>
+        <h2>Flowstate in Action</h2>
+        <p class="section-note">Community events, mobile setups, and real clients getting their drip on.</p>
+      </div>
+      <div class="gallery-scroll" id="galleryScroll">
+        <img src="images/gallery/gallery-1.jpg" alt="Flowstate IV Therapy setup at a volleyball tournament">
+        <img src="images/gallery/gallery-2.jpg" alt="Clients receiving IV therapy together at a home visit">
+        <img src="images/gallery/gallery-3.jpg" alt="Flowstate IV Therapy booth signage at a community event">
+        <img src="images/gallery/gallery-4.jpg" alt="Clients relaxing with IV drips under the Flowstate tent at a kickball tournament">
+        <img src="images/gallery/gallery-5.jpg" alt="Laticia checking in with a client at a volleyball tournament">
+        <img src="images/gallery/gallery-6.jpg" alt="Laticia at the Flowstate booth during a kickball tournament">
+        <img src="images/gallery/gallery-7.jpg" alt="IV bag set up at the Flowstate booth during a kickball tournament">
+      </div>
+      <div class="gallery-controls">
+        <button type="button" id="galleryPrev" aria-label="Previous photo">&#8249;</button>
+        <button type="button" id="galleryNext" aria-label="Next photo">&#8250;</button>
+      </div>
+    </div>
+  </section>
   <section id="contact" class="contact-section">
     <div class="container">
       <p class="eyebrow">Get In Touch</p>
       <h2>Come to You</h2>
-      <p class="contact-intro">Mobile IV hydration therapy anywhere in the Albuquerque area. Call, text, or DM to book.</p>
+      <p class="contact-intro">Mobile IV hydration therapy anywhere in the Albuquerque and Rio Rancho area. Call, text, or DM to book.</p>
       <div class="contact-actions">
         <a class="btn btn-primary" href="tel:+15052494350">(505) 249-4350</a>
         <a class="btn btn-outline" href="https://instagram.com/flowstateivtherapy" target="_blank" rel="noopener">DM on Instagram</a>
+        <a class="btn btn-outline" href="https://www.facebook.com/profile.php?id=61570989296043" target="_blank" rel="noopener">Message on Facebook</a>
       </div>
       <ul class="locations-list">
         <li>Your Home</li>
@@ -369,9 +431,27 @@
   <div class="container footer-content">
     <span class="wordmark small">Flowstate</span>
     <p class="disclaimer">IV therapy administered by a licensed RN. Not a substitute for emergency medical care.</p>
-    <a href="https://instagram.com/flowstateivtherapy" target="_blank" rel="noopener">@flowstateivtherapy</a>
+    <div class="footer-links">
+      <a href="https://instagram.com/flowstateivtherapy" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61570989296043" target="_blank" rel="noopener">Facebook</a>
+    </div>
   </div>
 </footer>
 
+<script>
+(function () {
+  var track = document.getElementById('galleryScroll');
+  var prev = document.getElementById('galleryPrev');
+  var next = document.getElementById('galleryNext');
+  if (!track || !prev || !next) return;
+  function scrollByCard(direction) {
+    var card = track.querySelector('img');
+    var amount = card ? card.getBoundingClientRect().width + 16 : 300;
+    track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+  }
+  prev.addEventListener('click', function () { scrollByCard(-1); });
+  next.addEventListener('click', function () { scrollByCard(1); });
+})();
+</script>
 </body>
 </html>
