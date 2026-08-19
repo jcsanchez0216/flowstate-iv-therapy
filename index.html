@@ -101,8 +101,8 @@
     z-index: 0;
   }
   .hero-content { position: relative; z-index: 1; text-align: center; }
-  .hero-logo { width: 160px; height: 160px; margin: 0 auto 28px; }
-  .hero-logo svg { width: 100%; height: 100%; }
+  .hero-logo { width: 140px; margin: 0 auto 28px; }
+  .hero-logo img { width: 100%; height: auto; display: block; }
   .hero .eyebrow { color: var(--accent); }
   .hero-tagline { font-size: 2.125rem; margin-bottom: 16px; }
   @media (min-width: 768px) { .hero-tagline { font-size: 2.875rem; } }
@@ -157,6 +157,9 @@
     margin: 0 auto;
     border-radius: var(--radius);
     background: var(--placeholder-bg);
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
   }
   @media (min-width: 768px) { .about-photo { margin: 0; } }
   .about-copy h2 { font-size: 1.75rem; margin-bottom: 16px; }
@@ -214,17 +217,8 @@
          once real hero photography is available. Keep .hero-content's z-index: 1 unchanged so text stays readable over the photo. -->
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-content">
-      <div class="hero-logo" aria-hidden="true">
-        <svg viewBox="0 0 220 220">
-          <circle cx="110" cy="110" r="104" fill="none" style="stroke:var(--cream)" stroke-width="1.5"/>
-          <path id="ringPath" d="M 14,110 A 96,96 0 0 1 206,110" fill="none"/>
-          <text font-family="Archivo, sans-serif" font-size="13" letter-spacing="4" style="fill:var(--cream)">
-            <textPath href="#ringPath" startOffset="50%" text-anchor="middle">IV THERAPY</textPath>
-          </text>
-          <text x="110" y="118" font-family="'Dancing Script', cursive" font-size="46" style="fill:var(--cream)" text-anchor="middle">Flowstate</text>
-          <path d="M40,150 C40,158 33,164 33,172 a7,7 0 0 0 14,0 C47,164 40,158 40,150 Z" style="fill:var(--accent)"/>
-          <path d="M180,150 C180,158 173,164 173,172 a7,7 0 0 0 14,0 C187,164 180,158 180,150 Z" style="fill:var(--accent)"/>
-        </svg>
+      <div class="hero-logo">
+        <img src="images/logo-dark.png" alt="Flowstate IV Therapy logo">
       </div>
       <p class="eyebrow">Mobile IV Hydration Therapy &middot; Albuquerque, NM</p>
       <h1 class="hero-tagline">Mobile wellness that fits your flow.</h1>
@@ -343,10 +337,7 @@
   </section>
   <section id="about">
     <div class="container about-grid">
-      <!-- PLACEHOLDER: replace the .about-photo div below with
-           <img class="about-photo" src="laticia-portrait.jpg" alt="Laticia Sanchez, BSN, RN, founder of Flowstate IV Therapy">
-           once a real portrait photo is available. -->
-      <div class="about-photo" aria-hidden="true"></div>
+      <img class="about-photo" src="images/laticia-portrait.jpg" alt="Laticia Sanchez, BSN, RN, founder of Flowstate IV Therapy">
       <div class="about-copy">
         <p class="eyebrow">Meet Your Nurse</p>
         <h2>Laticia Sanchez, <span class="credential">BSN, RN</span></h2>
